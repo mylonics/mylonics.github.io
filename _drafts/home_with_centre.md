@@ -7,7 +7,7 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
 title: mylonics
 excerpt: >
-  Electronic and Embedded Systems Design Services. <br />
+  Electrical and Embedded Systems Design Services. <br />
   <small>Based in Edmonton Alberta, providing services nationwide</small>
 feature_row:
   - image_path: /assets/images/industrial-automation.jpg

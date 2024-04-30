@@ -6,9 +6,11 @@ header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
 title: mylonics
+subtitle: Electrical Design and Contracting Work in the Greater Edmonton Area
 excerpt: >
-  Electronic and Embedded Systems Design Services. <br />
-  <small>Ready to innovate and deliver a tailored solution or enhance existing designs.</small>
+  Electrical and Embedded Systems Design Services. <br />
+  <small>Ready to innovate and deliver a tailored solution or enhance existing designs.
+  <br /> Based in the Greater Edmonton Area</small>
 feature_row:
   - image_path: /assets/images/industrial-automation.jpg
     alt: "industrail automation"
