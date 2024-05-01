@@ -9,7 +9,7 @@ title: mylonics
 subtitle: Electrical Design and Contracting Work in the Greater Edmonton Area
 excerpt: >
   Electrical and Embedded Systems Design Services. <br />
-  <small>Ready to innovate and deliver a tailored solution or enhance existing designs.
+  <small>Ready to innovate and deliver a tailored solution or enhance your existing designs.
   <br /> Based in the Greater Edmonton Area</small>
 feature_row:
   - image_path: /assets/images/industrial-automation.jpg
@@ -23,9 +23,9 @@ feature_row:
   - image_path: /assets/images/circuit-board.jpg
     alt: "electrical systems design"
     title: "Electrical Systems Design"
-    excerpt: "We can help you design, test, and manufacture a specific component for a system all the way to a system as a whole"  
+    excerpt: "We can help you design, test, and manufacture an individual component or an entire system"  
 intro: 
-  - excerpt: 'We believe close collaboration with our clients through every step of the design process will help to develop and deliver a solution that is feasible from an engineering, and business perspective.'
+  - excerpt: 'We engage in close collaboration with our clients. Through every step of the design process we will help to develop and deliver a solution that is feasible from an engineering, and business perspective.'
 ---
 
 {% include feature_row %}
