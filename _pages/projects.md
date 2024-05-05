@@ -2,8 +2,10 @@
 title: "projects"
 layout: collection
 permalink: /projects/
-entries_layout: grid
 classes: wide
+collection: posts
+author_profile: false
+
 ---
 
-Stay tuned for new projects
+Check out some of our projects.

@@ -1,29 +1,50 @@
 ---
-title: "Welcome to Jekyll!"
-date: 2019-04-18T15:34:30-04:00
+title: "Zephyr IDE for Visual Studio Code"
+date: 2024-05-05
 categories:
   - blog
+layout: single
+
+classes: wide
 tags:
-  - Jekyll
-  - update
+  - zephyr
+  - visual studio code
+  - rtos
+  - vs code extension
 ---
 
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Recently I switched from Mbed to Zephyr as my primary RTOS. I chose Mbed as a framework for my previous company because at the time it was one of the more fully featured RTOS with a HAL. In recent years the Zephyr Project has become more popular and now supports the microcontroller lines that I primarily use in my embedded systems contracting work. 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+An important thing with embedded systems works is the ability to easily create and share projects with clients. Clients come in a wide range of skill levels and not everyone is comfortable working in the terminal. Issues can arise when you think you and your partner are running the same command, but are not.
 
-Jekyll also offers powerful support for code snippets:
+As there is no direct IDE-style support for Visual Studio Code, I set about creating an extension that would suit my needs. To start I knew I wanted an IDE that could create multiple projects and builds, and be able to easily save/share the workspace via git. These features would allow me to easily share projects in a mono repository with clients. So from that motivation came the [Zephyr IDE for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=mylonics.zephyr-ide). 
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+[![Zephyr IDE for Visual Studio Code](/assets/images/zephyr-ide/zephyr-ide_branding.png)](https://marketplace.visualstudio.com/items?itemName=mylonics.zephyr-ide "Zephyr IDE for Visual Studio Code")
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+## What does the Zephyr IDE for VS Code Do
+The extension boasts a handful of features:
+  - Sets up a west environment
+  - Downloads the Zephyr SDK
+  - Provides west.yml templates to start with or you can provide your own
+  - Allows you to add projects from scratch or from templates
+  - Create multiple projects
+  - For each project, you can create multiple builds
+  - Each project may have its own kconfig files and overlay files
+  - Each build may have a unique board, kconfig files, and overlay files and runner
+  - Each build may be bound to a launch/debug configuration for debug, build and debug and attach.
+  - GUI Panels to show the full project tree and active projects
+  - Automatically changing active project based on the last viewed file in the editor
+  - All commands that are available in the GUI are available in the command palette.
+  - Provides useful functions to set up custom launch/debug configurations
+  - Provides the user with a terminal to manually run west commands
+  - Saves/loads project structure to workspace in a human readable and editable file    
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+
+## How to get started
+Well there are a couple videos up on how to use the extension:
+
+[![Getting Started with Zephyr IDE](/assets/images/zephyr-ide/getting_started_thumbnail.png)](https://www.youtube.com/watch?v=Asfolnh9kqM&t "Getting Started with Zephyr IDE")
+
+[![STM32 Board Setup And Debugging with Zephyr IDE](/assets/images/zephyr-ide/board_setup_thumbnail.png)](https://www.youtube.com/watch?v=TXcTzyswBMQ)
+
+
