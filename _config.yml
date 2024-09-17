@@ -214,6 +214,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-remote-include
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -223,6 +224,7 @@ whitelist:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-remote-include
 
 
 # Archives

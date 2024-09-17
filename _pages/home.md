@@ -13,9 +13,12 @@ excerpt: >
   <br /> Based in the Greater Edmonton Area</small>
 feature_row:
   - image_path: /assets/images/industrial-automation.jpg
-    alt: "industrail automation"
+    alt: "Industrial automation"
     title: "Industrial Automation"
     excerpt: "We have proven experience with custom industrial control systems, and the use of field robotics for remote sensing."
+    btn_class: "btn--primary"
+    btn_label: "Learn more"
+    url: "/industrial_automation/"
   - image_path: /assets/images/software.jpg
     alt: "firmware development"
     title: "Firmware Development"
