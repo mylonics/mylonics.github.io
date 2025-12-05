@@ -1,7 +1,8 @@
 ---
 permalink: /industrial_automation/
-title: "industrial automation and field robotics"
-excerpt: "learn about our experience with industrial automation and field robotics"
+title: "Industrial Automation and Field Robotics Services"
+excerpt: "Mylonics offers industrial automation and field robotics engineering services in Edmonton, Alberta. Custom control systems, remote sensing, and robotic solutions."
+description: "Mylonics offers industrial automation and field robotics engineering services in Edmonton, Alberta. Custom control systems, remote sensing, and robotic solutions."
 toc: false
 author_profile: false
 ---

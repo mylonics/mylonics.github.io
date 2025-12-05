@@ -1,7 +1,8 @@
 ---
 permalink: /about/
-title: "about"
-excerpt: "learn more about mylonics"
+title: "About Mylonics - Electrical Engineering Services"
+excerpt: "Learn about Mylonics, an Edmonton-based electrical and embedded systems engineering company specializing in industrial automation and robotics."
+description: "Learn about Mylonics, an Edmonton-based electrical and embedded systems engineering company specializing in industrial automation and robotics."
 toc: false
 author_profile: false
 ---

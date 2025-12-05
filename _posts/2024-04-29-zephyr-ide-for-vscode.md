@@ -1,5 +1,6 @@
 ---
 title: "Zephyr IDE for Visual Studio Code"
+description: "Zephyr IDE is a VS Code extension for embedded development with Zephyr RTOS. Learn how to easily create and share embedded projects with clients."
 date: 2024-05-05
 categories:
   - blog
