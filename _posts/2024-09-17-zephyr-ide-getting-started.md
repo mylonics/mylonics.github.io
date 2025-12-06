@@ -12,6 +12,17 @@ tags:
   - visual studio code
   - rtos
   - vscode extension
+redirect_to: https://zephyr-ide.mylonics.com/
 ---
 
-{% remote_include https://raw.githubusercontent.com/mylonics/zephyr-ide/main/docs/MANUAL.md %}
+For the complete and up-to-date documentation on getting started with Zephyr IDE, please visit our official documentation site:
+
+**[Zephyr IDE Documentation](https://zephyr-ide.mylonics.com/)**
+
+The documentation includes:
+- Installation instructions
+- Workspace setup guide
+- Host tools configuration
+- SDK management
+- Project creation tutorials
+- And much more!

@@ -12,3 +12,17 @@ search: false
 .site-logo img {
   max-height: 4rem;
 }
+
+// Fix mobile navigation - ensure logo doesn't hide navigation toggle
+@media (max-width: 768px) {
+  .greedy-nav {
+    .site-logo {
+      max-width: 50px;
+      
+      img {
+        max-height: 2rem;
+        max-width: 50px;
+      }
+    }
+  }
+}
