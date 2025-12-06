@@ -12,3 +12,19 @@ search: false
 .site-logo img {
   max-height: 4rem;
 }
+
+// Show full logo on desktop, square logo on mobile
+.site-logo .logo-square {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-logo .logo-full {
+    display: none;
+  }
+  
+  .site-logo .logo-square {
+    display: block;
+    max-height: 2.5rem;
+  }
+}
