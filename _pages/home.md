@@ -5,8 +5,9 @@ hidden: true
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
-title: mylonics
+title: "Mylonics - Electrical Design Services"
 subtitle: Electrical Design and Contracting Work in the Greater Edmonton Area
+description: "Mylonics provides professional electrical and embedded systems design services in Edmonton, Alberta. Specializing in PCB design, industrial automation, robotics, and firmware development."
 excerpt: >
   Electrical and Embedded Systems Design Services. <br />
   <small>Ready to innovate and deliver a tailored solution or enhance your existing designs.

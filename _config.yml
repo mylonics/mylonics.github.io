@@ -12,10 +12,10 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : Mylonics Electrical Design and Contracting Work in the Greater Edmonton Area
+title                    : "Mylonics - Electrical Design and Contracting in Edmonton, Alberta"
 masthead_title           :  
 name                     : &name "Rijesh Augustine" # &name is a YAML anchor which can be *referenced later
-description              : &description "Mylonics provied electrical and embedded systems design services and contract work. They focus on pcbs, industrial automation, robotics and sensors. They are based in Edmonton Alberta."
+description              : &description "Mylonics provides electrical and embedded systems design services and contract work. Specializing in PCB design, industrial automation, robotics, and sensor systems in Edmonton, Alberta."
 url                      : https://mylonics.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : "mylonics/mylonics.github.io"
@@ -76,8 +76,8 @@ baidu_site_verification  :
 # For specifying social profiles, used in _includes/seo.html
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Organization
+  name                   : Mylonics
   links: # An array of links to social media profiles
     - "https://twitter.com/mylonics"
     - "https://instagram.com/mylonics"
