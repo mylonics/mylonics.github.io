@@ -23,6 +23,10 @@ tags:
 - **Documentation:** [https://struct-frame.mylonics.com](https://struct-frame.mylonics.com)
 - **GitHub Repository:** [https://github.com/mylonics/struct-frame](https://github.com/mylonics/struct-frame)
 
-## About
+## Motivation
 
-Struct Frame is a Python library for frame-based data parsing and serialization. It provides an easy way to define structured data formats commonly used in embedded systems communication protocols.
+I wanted something lightweight and cross-platform for message serialization - a C++ implementation that works for embedded systems. Existing solutions like Embedded Proto and Cap'n Proto are not lightweight; they have a huge encoding burden.
+
+I wanted to be able to create and parse messages directly in a buffer to reduce an extra copy step. MAVLink was the best option available, but sometimes a smaller header is important for low bandwidth links, and MAVLink doesn't have the direct buffer feature mentioned above.
+
+Struct Frame addresses these needs with a minimal footprint design optimized for embedded systems communication.

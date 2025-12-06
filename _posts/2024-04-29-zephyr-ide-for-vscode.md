@@ -28,6 +28,6 @@ tags:
 
 ## Motivation
 
-An important part of embedded systems work is the ability to easily create and share projects with clients. Clients come in a wide range of skill levels and not everyone is comfortable working in the terminal. Issues can arise when you think you and your partner are running the same command, but are not.
+I switched from Mbed to Zephyr as my primary RTOS. I chose Mbed as a framework for my previous company because at the time it was one of the more fully featured RTOS with a HAL. In recent years the Zephyr Project has become more popular and now supports the microcontroller lines that I primarily use in my embedded systems contracting work.
 
-As there is no direct IDE-style support for Visual Studio Code with Zephyr, I set about creating an extension that would suit my needs. I wanted an IDE that could create multiple projects and builds, and be able to easily save/share the workspace via git. These features would allow me to easily share projects in a mono repository with clients.
+An important part of embedded systems work is the ability to easily distribute, setup and build projects. As there is no direct IDE-style support for Visual Studio Code with Zephyr, I set about creating an extension that would suit my needs. I wanted an IDE that could create multiple projects and builds, and be able to easily save/share the workspace via git. These features would allow me to easily share projects in a mono repository with clients.
