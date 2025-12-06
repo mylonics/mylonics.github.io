@@ -15,14 +15,8 @@ search: false
 
 // Fix mobile navigation - ensure logo doesn't hide navigation toggle
 @media (max-width: 768px) {
-  .greedy-nav {
-    .site-logo {
-      max-width: 50px;
-      
-      img {
-        max-height: 2rem;
-        max-width: 50px;
-      }
-    }
+  .greedy-nav .site-logo img {
+    max-height: 2rem;
+    max-width: 50px;
   }
 }
