@@ -13,10 +13,18 @@ search: false
   max-height: 4rem;
 }
 
-// Fix mobile navigation - ensure logo doesn't hide navigation toggle
+// Show full logo on desktop, square logo on mobile
+.site-logo .logo-square {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .greedy-nav .site-logo img {
-    max-height: 2rem;
-    max-width: 50px;
+  .site-logo .logo-full {
+    display: none;
+  }
+  
+  .site-logo .logo-square {
+    display: block;
+    max-height: 2.5rem;
   }
 }
