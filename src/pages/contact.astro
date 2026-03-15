@@ -1,0 +1,99 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { SITE } from '@data/constants';
+import Icon from '@components/ui/icons/Icon.astro';
+import ContactIconBlock from '@components/ui/blocks/ContactIconBlock.astro';
+
+const pageTitle: string = `Contact | ${SITE.title}`;
+const metaDescription =
+  'Contact Mylonics for electrical and embedded systems engineering services in Edmonton, Alberta.';
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://mylonics.com/contact',
+    url: 'https://mylonics.com/contact',
+    name: pageTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://mylonics.com',
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <div class="text-center">
+        <h1
+          class="text-2xl font-bold tracking-tight text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+        >
+          Contact Mylonics
+        </h1>
+        <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+          Have a project in mind? Contact us with details and we will see how we can help.
+        </p>
+      </div>
+
+      <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
+        <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+          <h2 class="mb-6 text-xl font-bold text-neutral-700 dark:text-neutral-300">
+            Get in Touch
+          </h2>
+          <p class="text-pretty text-neutral-600 dark:text-neutral-400">
+            We provide electrical and embedded engineering services in the Greater Edmonton Area.
+            Whether you're a startup or an established business, we'd love to hear about your project.
+          </p>
+          <div class="mt-8">
+            <a
+              href="mailto:info@mylonics.com"
+              class="inline-flex items-center gap-x-2 rounded-full bg-yellow-400 px-6 py-3 text-base font-bold text-neutral-800 transition duration-300 hover:bg-yellow-300 dark:bg-yellow-500 dark:text-neutral-900 dark:hover:bg-yellow-400"
+            >
+              <Icon name="envelopeOpen" />
+              Send Us an Email
+            </a>
+          </div>
+        </div>
+
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          <ContactIconBlock
+            heading="Email"
+            content="Send us an email and we'll get back to you."
+            isLinkVisible={true}
+            linkTitle="info@mylonics.com"
+            linkURL="mailto:info@mylonics.com"
+            isArrowVisible={false}
+          >
+            <Icon name="envelopeOpen" />
+          </ContactIconBlock>
+
+          <ContactIconBlock
+            heading="GitHub"
+            content="Check out our open source projects on GitHub."
+            isLinkVisible={true}
+            linkTitle="github.com/mylonics"
+            linkURL="https://github.com/mylonics"
+            isArrowVisible={true}
+          >
+            <Icon name="chatBubble" />
+          </ContactIconBlock>
+
+          <ContactIconBlock
+            heading="Location"
+            content="Greater Edmonton Area, Alberta, Canada"
+            isAddressVisible={true}
+            addressContent="Edmonton, AB, Canada"
+          >
+            <Icon name="mapPin" />
+          </ContactIconBlock>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

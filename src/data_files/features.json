@@ -1,0 +1,17 @@
+[
+  {
+    "heading": "Industrial Automation",
+    "content": "We have proven experience with custom industrial control systems, motor controllers, robotic payloads, sensors, communication systems, and human machine interfaces.",
+    "svg": "house"
+  },
+  {
+    "heading": "Firmware Development",
+    "content": "We can set up a full development environment from the ground up to meet your development and deployment needs, specializing in embedded systems and Zephyr RTOS.",
+    "svg": "tools"
+  },
+  {
+    "heading": "Electrical Systems Design",
+    "content": "We can help you design, test, and manufacture an individual component or an entire system, including PCB design and electrical system architecture.",
+    "svg": "dashboard"
+  }
+]

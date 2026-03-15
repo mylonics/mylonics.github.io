@@ -1,0 +1,76 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import HeroSection from '@components/sections/landing/HeroSection.astro';
+import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
+import heroImage from '@images/mylonics-hero.jpg';
+import featureImage from '@images/mylonics-industrial-automation.jpg';
+import features from '@data/features.json';
+import { SITE } from '@data/constants';
+
+const pageTitle: string = `${SITE.title} - Electrical Design and Contracting`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://mylonics.com',
+    url: 'https://mylonics.com',
+    name: pageTitle,
+    description: SITE.description,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://mylonics.com',
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <HeroSection
+    title=`Electrical &amp; Embedded Systems <span class="text-yellow-500 dark:text-yellow-400">Design Services</span>`
+    subTitle="Professional electrical and embedded systems design services in Edmonton, Alberta. Specializing in PCB design, industrial automation, robotics, and firmware development."
+    primaryBtn="Get in Touch"
+    primaryBtnURL="/contact"
+    secondaryBtn="Learn More"
+    secondaryBtnURL="/about"
+    src={heroImage}
+    alt="Circuit board - Mylonics electrical engineering"
+  />
+
+  <FeaturesGeneral
+    title="Our Services"
+    subTitle="We engage in close collaboration with our clients. Through every step of the design process we help to develop and deliver a solution that is feasible from an engineering and business perspective."
+    src={featureImage}
+    alt="Industrial automation equipment"
+    features={features}
+  />
+
+  <section class="relative mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
+    <div class="mx-auto mt-5 max-w-xl text-center">
+      <h2 class="block text-4xl leading-tight font-bold tracking-tight text-balance text-neutral-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
+        Ready to Start Your Project?
+      </h2>
+    </div>
+    <div class="mx-auto mt-5 max-w-3xl text-center">
+      <p class="text-lg text-pretty text-neutral-600 dark:text-neutral-400">
+        Whether you are a startup or an established business, if you are looking for electrical or embedded systems help, we'd love to hear from you.
+      </p>
+    </div>
+    <div class="mt-8 flex justify-center gap-3">
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-x-2 rounded-full bg-yellow-400 px-6 py-3 text-base font-bold text-neutral-800 transition duration-300 hover:bg-yellow-300 dark:bg-yellow-500 dark:text-neutral-900 dark:hover:bg-yellow-400"
+      >
+        Contact Us
+      </a>
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-x-2 rounded-full border border-neutral-400 bg-transparent px-6 py-3 text-base font-bold text-neutral-700 transition duration-300 hover:bg-neutral-200 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-700"
+      >
+        View Projects
+      </a>
+    </div>
+  </section>
+</MainLayout>

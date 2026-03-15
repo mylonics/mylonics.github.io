@@ -1,27 +1,29 @@
-# Minimal Mistakes remote theme starter
+# Mylonics Website
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+The official website for [Mylonics](https://mylonics.com) - Electrical and Embedded Systems Design Services in Edmonton, Alberta.
 
-Contains basic configuration to get you a site with:
+Built with [Astro](https://astro.build) and the [ScrewFast](https://github.com/mearashadowfax/ScrewFast) theme.
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## Development
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+```bash
+npm install
+npm run dev
+```
 
----
+## Build
 
-## Troubleshooting
+```bash
+npm run build
+```
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## Deployment
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+This site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+
+## Tech Stack
+
+- [Astro](https://astro.build) - Static site generator
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [Preline UI](https://preline.co) - UI components
+- [ScrewFast](https://github.com/mearashadowfax/ScrewFast) - Base theme
