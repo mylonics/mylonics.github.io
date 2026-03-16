@@ -1,0 +1,91 @@
+name: Deploy comparison (Jekyll at / and Astro at /v2/)
+
+# Builds both the original Jekyll site (from master) and the new Astro site
+# and deploys them side by side so they can be compared:
+#   https://mylonics.com/       -> Original Jekyll / Minimal Mistakes site
+#   https://mylonics.com/v2/   -> New Astro / ScrewFast site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build both sites
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Astro branch
+        uses: actions/checkout@v4
+        with:
+          path: astro-site
+
+      - name: Checkout master branch (Jekyll source)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: jekyll-site
+
+      # ── Astro build ─────────────────────────────────────────────────────────
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: astro-site/package-lock.json
+
+      - name: Install Astro dependencies
+        working-directory: astro-site
+        run: npm ci
+
+      - name: Build Astro site at /v2/
+        working-directory: astro-site
+        run: npm run build
+        env:
+          ASTRO_BASE: /v2
+
+      # ── Jekyll build ─────────────────────────────────────────────────────────
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          working-directory: jekyll-site
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        working-directory: jekyll-site
+        run: bundle exec jekyll build --destination _site
+
+      # ── Combine ──────────────────────────────────────────────────────────────
+      - name: Combine both sites into a single artifact
+        run: |
+          mkdir -p combined-dist
+          # Jekyll at root (includes CNAME for custom domain)
+          cp -r jekyll-site/_site/. combined-dist/
+          # Astro at /v2/
+          mkdir -p combined-dist/v2
+          cp -r astro-site/dist/. combined-dist/v2/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./combined-dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
