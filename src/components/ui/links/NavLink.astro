@@ -1,4 +1,5 @@
 ---
+import { withBase } from '@utils/path';
 // Destructure the properties from Astro.props
 const { url, name } = Astro.props;
 
@@ -19,7 +20,7 @@ If URL is '/' (home page), assign ID as 'home'
 }
 <a
   id={url === '/' ? 'home' : url.replace('/', '')}
-  href={url}
+  href={withBase(url)}
   data-astro-prefetch
   class="rounded-lg text-base font-medium text-neutral-600 ring-zinc-500 outline-hidden hover:text-neutral-500 focus-visible:ring-3 md:py-3 md:text-sm 2xl:text-base dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-hidden"
 >
@@ -28,17 +29,19 @@ If URL is '/' (home page), assign ID as 'home'
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Strip the base path (e.g. "/v2") so the ID lookup matches plain slugs
+    const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // "" or "/v2"
     let url = window.location.pathname;
-    let navId;
+    if (base) url = url.replace(base, '') || '/';
 
+    let navId: string;
     if (url === '/') {
       navId = 'home';
     } else {
-      navId = url.replace('/', '');
+      navId = url.replace(/^\//, '').replace(/\/$/, '');
     }
 
-    let nav = document.getElementById(navId);
-
+    const nav = document.getElementById(navId);
     if (nav) {
       nav.classList.remove(
         'text-neutral-600',

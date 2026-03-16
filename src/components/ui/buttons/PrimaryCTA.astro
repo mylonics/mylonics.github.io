@@ -1,5 +1,6 @@
 ---
 import Icon from '@components/ui/icons/Icon.astro';
+import { withBase } from '@utils/path';
 // Destructure the properties from Astro.props
 const { title, url, noArrow } = Astro.props;
 // Define TypeScript interface for the properties
@@ -22,7 +23,7 @@ const ringClasses = 'dark:ring-zinc-200';
 {/* Link styled as a button, with dynamic title, URL, and optional arrow */}
 <a
   class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
-  href={url}
+  href={withBase(url ?? '/')}
 >
   {title}
   {/* Display the arrow based on the 'noArrow' property */}

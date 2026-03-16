@@ -6,6 +6,7 @@ import heroImage from '@images/mylonics-hero.jpg';
 import featureImage from '@images/mylonics-industrial-automation.jpg';
 import features from '@data/features.json';
 import { SITE } from '@data/constants';
+import { withBase } from '@utils/path';
 
 const pageTitle: string = `${SITE.title} - Electrical Design and Contracting`;
 ---
@@ -60,13 +61,12 @@ const pageTitle: string = `${SITE.title} - Electrical Design and Contracting`;
     </div>
     <div class="mt-8 flex justify-center gap-3">
       <a
-        href="/contact"
-        class="inline-flex items-center gap-x-2 rounded-full bg-blue-500 px-6 py-3 text-base font-bold text-white transition duration-300 hover:bg-blue-400 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-500"
+        href={withBase('/contact')}
       >
         Contact Us
       </a>
       <a
-        href="/blog"
+        href={withBase('/blog')}
         class="inline-flex items-center gap-x-2 rounded-full border border-neutral-400 bg-transparent px-6 py-3 text-base font-bold text-neutral-700 transition duration-300 hover:bg-neutral-200 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-700"
       >
         View Projects
