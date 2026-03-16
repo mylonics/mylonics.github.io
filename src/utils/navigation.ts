@@ -1,7 +1,9 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: 'Home', url: '/' },
-  { name: 'About', url: '/about' },
+  { name: 'Services', url: '/services' },
+  { name: 'Products', url: '/products' },
+  { name: 'Tools', url: '/tools' },
   { name: 'Blog', url: '/blog' },
   { name: 'Contact', url: '/contact' },
 ];
@@ -10,15 +12,27 @@ const footerLinks = [
   {
     section: 'Services',
     links: [
-      { name: 'Industrial Automation', url: '/about#industrial-automation' },
-      { name: 'Firmware Development', url: '/about#firmware' },
-      { name: 'Electrical Systems Design', url: '/about#electrical' },
+      { name: 'Industrial Automation', url: '/services#industrial-automation' },
+      { name: 'Field Robotics', url: '/services#field-robotics' },
+      { name: 'Analog Sensing', url: '/services#analog-sensing' },
+      { name: 'Wireless / IoT', url: '/services#wireless-communication' },
+      { name: 'Firmware Development', url: '/services#firmware-development' },
+      { name: 'Electrical Systems Design', url: '/services#electrical-systems-design' },
+    ],
+  },
+  {
+    section: 'Tools',
+    links: [
+      { name: 'Zephyr IDE', url: '/tools#zephyr-ide' },
+      { name: 'Struct Frame', url: '/tools#struct-frame' },
+      { name: 'BMP Debug', url: '/tools#bmp-debug' },
     ],
   },
   {
     section: 'Company',
     links: [
-      { name: 'About us', url: '/about' },
+      { name: 'About', url: '/about' },
+      { name: 'Products', url: '/products' },
       { name: 'Blog', url: '/blog' },
       { name: 'Contact', url: '/contact' },
     ],
