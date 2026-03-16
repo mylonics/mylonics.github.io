@@ -2,7 +2,9 @@ name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ['master']
+  pull_request:
+    branches: ['master']
   workflow_dispatch:
 
 permissions:
@@ -11,8 +13,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,29 +23,76 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: current
+
+      # For PRs: also check out master so we can keep production at /
+      - name: Checkout master (production base for PR preview)
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: production
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: current/package-lock.json
 
       - name: Setup Pages
+        if: github.event_name != 'pull_request'
         id: pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
+        working-directory: current
         run: npm ci
 
+      # ── Production deploy (push to master) ──────────────────────────────────
       - name: Build with Astro
+        if: github.event_name != 'pull_request'
+        working-directory: current
         run: npm run build
-        env:
-          SITE: ${{ steps.pages.outputs.origin }}
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./current/dist
+
+      # ── PR preview deploy (production at / + PR branch at /dev) ─────────────
+      - name: Install production dependencies
+        if: github.event_name == 'pull_request'
+        working-directory: production
+        run: npm ci
+
+      - name: Build production site at root
+        if: github.event_name == 'pull_request'
+        working-directory: production
+        run: npm run build
+
+      - name: Build PR preview at /dev
+        if: github.event_name == 'pull_request'
+        working-directory: current
+        run: npm run build
+        env:
+          ASTRO_BASE: /dev
+
+      - name: Combine production and PR preview
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p combined-dist
+          cp -r production/dist/. combined-dist/
+          mkdir -p combined-dist/dev
+          cp -r current/dist/. combined-dist/dev/
+
+      - name: Upload PR preview artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./combined-dist
 
   deploy:
     name: Deploy
