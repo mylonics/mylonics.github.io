@@ -3,6 +3,7 @@
 import FooterSocialLink from '@components/ui/links/FooterSocialLink.astro';
 import Icon from '@components/ui/icons/Icon.astro';
 import BrandLogo from '@components/BrandLogo.astro';
+import ThemeIcon from '@components/ThemeIcon.astro';
 import { SITE } from '@data/constants';
 import navStrings from '@utils/navigation.ts';
 import { withBase } from '@utils/path';
@@ -66,13 +67,15 @@ import { withBase } from '@utils/path';
       </div>
 
       {/* Social Brands */}
-      <div>
+      <div class="flex items-center gap-x-2">
         <FooterSocialLink url={navStrings.socialLinks.x}
           ><Icon name="xFooter" /></FooterSocialLink
         >
         <FooterSocialLink url={navStrings.socialLinks.github}
           ><Icon name="githubFooter" />
         </FooterSocialLink>
+        {/* Theme Toggle */}
+        <ThemeIcon />
       </div>
     </div>
 

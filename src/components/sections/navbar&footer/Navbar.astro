@@ -1,6 +1,5 @@
 ---
 //Import relevant dependencies
-import ThemeIcon from '@components/ThemeIcon.astro';
 import NavLink from '@components/ui/links/NavLink.astro';
 import BrandLogo from '@components/BrandLogo.astro';
 import navStrings from '@utils/navigation.ts';
@@ -9,11 +8,11 @@ import { withBase } from '@utils/path';
 
 {/* Main header component */}
 <header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
+  class="sticky inset-x-0 top-0 z-50 flex w-full flex-wrap border-b border-neutral-200 bg-white text-sm md:flex-nowrap md:justify-start dark:border-neutral-700 dark:bg-neutral-900"
 >
   {/* Navigation container */}
   <nav
-    class="relative mx-2 w-full rounded-[36px] border border-blue-100/40 bg-blue-50/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md"
+    class="relative mx-auto w-full max-w-[85rem] px-4 py-3 md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8"
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
@@ -65,10 +64,7 @@ import { withBase } from '@utils/path';
           </svg>
         </button>
       </div>
-      {/* ThemeIcon component specifically for smaller screens */}
-      <span class="inline-block md:hidden">
-        <ThemeIcon />
-      </span>
+
     </div>
     {/* Contains navigation links */}
     <div
@@ -85,10 +81,7 @@ import { withBase } from '@utils/path';
             <NavLink url={link.url} name={link.name} />
           ))
         }
-        {/* ThemeIcon component specifically for larger screens */}
-        <span class="hidden md:inline-block">
-          <ThemeIcon />
-        </span>
+
       </div>
     </div>
   </nav>
