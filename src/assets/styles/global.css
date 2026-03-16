@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap');
 @import 'tailwindcss';
 
 /* Preline UI */
@@ -11,6 +12,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* K2D font family for brand name */
+  --font-k2d: 'K2D', sans-serif;
+
   /* https://tailwindcss.com/docs/colors#customizing-your-colors */
   --color-*: initial;
   --color-transparent: transparent;

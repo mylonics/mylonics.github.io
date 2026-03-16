@@ -1,7 +1,7 @@
 ---
 // BrandLogo for Mylonics
 import { Image } from 'astro:assets';
-import logoImg from '@images/mylonics-logo.png';
+import logoImg from '@images/mylonics-logo-square.png';
 const { class: className, ...rest } = Astro.props;
 ---
 <div class={`flex items-center gap-2 ${className ?? ''}`} {...rest}>
@@ -10,5 +10,5 @@ const { class: className, ...rest } = Astro.props;
     alt="Mylonics"
     class="h-full w-auto dark:brightness-0 dark:invert"
   />
-  <span class="text-xl font-bold text-neutral-800 dark:text-neutral-200">mylonics</span>
+  <span class="font-k2d text-xl font-bold text-[#53595e] dark:text-white">mylonics</span>
 </div>
