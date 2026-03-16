@@ -26,12 +26,12 @@ jobs:
         with:
           path: current
 
-      # For PRs: also check out master so we can keep production at /
-      - name: Checkout master (production base for PR preview)
+      # For PRs: also check out main so we can keep production at /
+      - name: Checkout main (production base for PR preview)
         if: github.event_name == 'pull_request'
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
           path: production
 
       - name: Setup Node
@@ -50,7 +50,7 @@ jobs:
         working-directory: current
         run: npm ci
 
-      # ── Production deploy (push to master) ──────────────────────────────────
+      # ── Production deploy (push to main) ──────────────────────────────────
       - name: Build with Astro
         if: github.event_name != 'pull_request'
         working-directory: current
