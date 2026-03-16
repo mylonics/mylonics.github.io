@@ -1,8 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
 import { OG, SEO, SITE } from '@data/constants';
-import faviconSvgSrc from '@images/icon.svg';
-import faviconSrc from '@images/icon.png';
 import { withBase } from '@utils/path';
 
 // Default properties for the Meta component. These values are used if props are not provided.
@@ -36,6 +34,7 @@ const siteURL = `${Astro.site}`; // Set the website URL in astro.config.mjs
 const author = SITE.author;
 const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
   .href;
+// Generate OG social image
 const socialImageRes = await getImage({
   src: OG.image,
   width: 1200,
@@ -44,19 +43,6 @@ const socialImageRes = await getImage({
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
 const alternateLanguageLinks: string = `<link rel="alternate" hreflang="en" href="${canonical}" />`;
-
-// Generate and optimize the favicon images
-const faviconSvg = await getImage({
-  src: faviconSvgSrc,
-  format: 'svg',
-});
-
-const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
-  format: 'png',
-});
 ---
 
 {
@@ -109,9 +95,12 @@ const appleTouchIcon = await getImage({
 
 {/* Links for favicons */}
 <link href={withBase('/favicon.ico')} rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
+<link href={withBase('/favicon/favicon-16x16.png')} rel="icon" type="image/png" sizes="16x16" />
+<link href={withBase('/favicon/favicon-32x32.png')} rel="icon" type="image/png" sizes="32x32" />
+<link href={withBase('/favicon/apple-touch-icon.png')} rel="apple-touch-icon" sizes="180x180" />
+<link href={withBase('/favicon/safari-pinned-tab.svg')} rel="mask-icon" color="#0092ca" />
 <meta name="mobile-web-app-capable" content="yes" />
-<link href={appleTouchIcon.src} rel="apple-touch-icon" />
-<link href={appleTouchIcon.src} rel="shortcut icon" />
 {/* Set theme color */}
-<meta name="theme-color" content="#facc15" />
+<meta name="theme-color" content="#0092ca" />
+<meta name="msapplication-TileColor" content="#0092ca" />
+<meta name="msapplication-config" content={withBase('/favicon/browserconfig.xml')} />
