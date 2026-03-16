@@ -1,0 +1,37 @@
+---
+import { withBase } from '@utils/path';
+// Destructure the properties from Astro.props
+const { url, name } = Astro.props;
+
+// Define TypeScript interface for the properties
+interface Props {
+  url: string;
+  name: string;
+}
+
+// Server-side active link detection — no JS needed, avoids flash of orange
+// Strip the base path (e.g. "/v2") from Astro.url.pathname before comparing
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // "" or "/v2"
+const currentPath = Astro.url.pathname.startsWith(base)
+  ? Astro.url.pathname.slice(base.length) || '/'
+  : Astro.url.pathname;
+// Use exact match for root, or prefix match requiring a trailing slash so
+// "/blog" doesn't accidentally activate on "/blog-archive" etc.
+const isActive =
+  currentPath === url ||
+  (url !== '/' && currentPath.startsWith(url + '/'));
+---
+
+<a
+  id={url === '/' ? 'home' : url.replace(/^\//, '').replace(/\//g, '-')}
+  href={withBase(url)}
+  data-astro-prefetch
+  aria-current={isActive ? 'page' : undefined}
+  class={`rounded-lg text-base font-medium ring-zinc-500 outline-hidden focus-visible:ring-3 md:py-3 md:text-sm 2xl:text-base dark:ring-zinc-200 dark:focus:outline-hidden ${
+    isActive
+      ? 'text-blue-500 dark:text-blue-400'
+      : 'text-neutral-600 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-500'
+  }`}
+>
+  {name}
+</a>

@@ -1,0 +1,122 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { SITE } from '@data/constants';
+import { Image } from 'astro:assets';
+import industrialImg from '@images/mylonics-industrial-automation.jpg';
+import firmwareImg from '@images/mylonics-firmware.jpg';
+import electricalImg from '@images/mylonics-electrical.jpg';
+import { withBase } from '@utils/path';
+
+const pageTitle: string = `About | ${SITE.title}`;
+const metaDescription =
+  'Learn about Mylonics, an Edmonton-based electrical and embedded systems engineering company specializing in industrial automation and robotics.';
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://mylonics.com/about',
+    url: 'https://mylonics.com/about',
+    name: pageTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://mylonics.com',
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <div class="text-center">
+        <h1
+          class="text-3xl font-bold tracking-tight text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+        >
+          About Mylonics
+        </h1>
+        <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
+          Electrical and Embedded Systems Design Services in Edmonton, Alberta
+        </p>
+      </div>
+
+      <div class="mt-12 space-y-8 text-pretty text-neutral-700 dark:text-neutral-300">
+        <p class="text-lg">
+          We provide electrical and embedded engineering services. Mylonics is based in the Greater Edmonton Area
+          and have provided services for a range of clients primarily in the fields of industrial automation and robotics.
+        </p>
+        <p class="text-lg">
+          We have a history of designing complicated electrical systems that incorporate motor controllers,
+          robotic payloads, sensors, communication systems, and human machine interfaces.
+        </p>
+        <p class="text-lg">
+          We enjoy new challenges with up and coming technologies. So whether you are a startup or an established business,
+          if you are looking for some electrical/embedded systems help please <a href={withBase('/contact')} class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 underline">contact us</a>.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-10 md:grid-cols-3">
+        <div id="industrial-automation" class="group">
+          <div class="overflow-hidden rounded-xl">
+            <Image
+              src={industrialImg}
+              alt="Industrial automation equipment"
+              class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+              draggable="false"
+            />
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-neutral-800 dark:text-neutral-200">Industrial Automation</h3>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">
+            Custom industrial control systems and field robotics for remote sensing. We design and build solutions
+            that meet your operational requirements.
+          </p>
+        </div>
+
+        <div id="firmware" class="group">
+          <div class="overflow-hidden rounded-xl">
+            <Image
+              src={firmwareImg}
+              alt="Firmware development"
+              class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+              draggable="false"
+            />
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-neutral-800 dark:text-neutral-200">Firmware Development</h3>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">
+            Full development environment setup from the ground up to meet your development and deployment needs,
+            including Zephyr RTOS and embedded systems expertise.
+          </p>
+        </div>
+
+        <div id="electrical" class="group">
+          <div class="overflow-hidden rounded-xl">
+            <Image
+              src={electricalImg}
+              alt="Electrical systems design"
+              class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+              draggable="false"
+            />
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-neutral-800 dark:text-neutral-200">Electrical Systems Design</h3>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400">
+            Design, test, and manufacture an individual component or an entire system, from PCB design to
+            full electrical system architecture.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href={withBase('/contact')}
+          class="inline-flex items-center gap-x-2 rounded-full bg-blue-500 px-6 py-3 text-base font-bold text-white transition duration-300 hover:bg-blue-400 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-500"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
