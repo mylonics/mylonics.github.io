@@ -1,10 +1,12 @@
 ---
 // BrandLogo for Mylonics
+import { Image } from 'astro:assets';
+import logoImg from '@images/mylonics-logo.png';
+const { class: className, ...rest } = Astro.props;
 ---
-<span
-  {...Astro.props}
-  class={`font-bold text-xl text-neutral-800 dark:text-neutral-200 ${Astro.props.class ?? ''}`}
-  style="font-family: sans-serif;"
->
-  <span class="text-yellow-500 dark:text-yellow-400">My</span>lonics
-</span>
+<Image
+  src={logoImg}
+  alt="Mylonics"
+  class={`h-10 w-auto dark:brightness-0 dark:invert ${className ?? ''}`}
+  {...rest}
+/>
