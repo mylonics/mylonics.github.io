@@ -34,6 +34,11 @@ jobs:
           ref: main
           path: production
 
+      - name: Setup Mylonics Styles
+        uses: mylonics/mylonics-styles@main
+        with:
+          path: current/mylonics-styles
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -67,6 +72,12 @@ jobs:
         if: github.event_name == 'pull_request'
         working-directory: production
         run: npm ci
+
+      - name: Setup Mylonics Styles (production)
+        if: github.event_name == 'pull_request'
+        uses: mylonics/mylonics-styles@main
+        with:
+          path: production/mylonics-styles
 
       - name: Build production site at root
         if: github.event_name == 'pull_request'

@@ -22,3 +22,8 @@ pnpm-debug.log*
 # Misc
 .DS_Store
 *.pem
+
+# Shared styles (cloned during CI from mylonics/mylonics-styles)
+mylonics-styles/
+_site/
+GemFile.lock

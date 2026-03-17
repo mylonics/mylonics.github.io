@@ -1,14 +1,15 @@
 import ogImageSrc from '@images/social.png';
+import { MYLONICS } from '../../mylonics-styles/brand/constants';
 
 export const SITE = {
-  title: 'Mylonics',
-  tagline: 'Electrical Design and Contracting',
+  title: MYLONICS.name,
+  tagline: MYLONICS.tagline,
   description:
     'Mylonics provides professional electrical and embedded systems design services in Edmonton, Alberta. Specializing in PCB design, industrial automation, robotics, and firmware development.',
   description_short:
     'Electrical and Embedded Systems Design Services in Edmonton, Alberta.',
-  url: 'https://mylonics.com',
-  author: 'Rijesh Augustine',
+  url: MYLONICS.url,
+  author: MYLONICS.author,
 };
 
 export const SEO = {
