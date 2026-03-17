@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import '../../../mylonics-styles/tailwind/brand-theme.css';
 
 /* Preline UI */
 @source '../../../node_modules/preline/dist/*.js';
@@ -103,6 +102,9 @@
   --color-zinc-900: oklch(0.21 0.006 285.885);
   --color-zinc-950: oklch(0.141 0.005 285.823);
 }
+
+/* Mylonics brand blue — imported after @theme reset so it overrides --color-*: initial */
+@import '../../../mylonics-styles/tailwind/brand-theme.css';
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
