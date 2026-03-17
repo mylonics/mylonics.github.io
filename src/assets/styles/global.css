@@ -11,8 +11,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* K2D font family for brand name — references the canonical brand heading font */
-  --font-k2d: var(--ml-font-heading);
+  /* K2D font family for brand name */
+  --font-k2d: 'K2D', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* https://tailwindcss.com/docs/colors#customizing-your-colors */
   --color-*: initial;
