@@ -32,6 +32,7 @@ const tools = [
       'Compatible with macOS, Linux, and Windows',
     ],
     repoUrl: 'https://github.com/mylonics/zephyr-ide',
+    docsUrl: 'https://zephyr-ide.mylonics.com/',
     marketplaceUrl:
       'https://marketplace.visualstudio.com/items?itemName=mylonics.zephyr-ide',
     openVsxUrl: 'https://open-vsx.org/extension/mylonics/zephyr-ide',
@@ -50,6 +51,7 @@ const tools = [
       'MIT licensed',
     ],
     repoUrl: 'https://github.com/mylonics/struct-frame',
+    docsUrl: 'https://struct-frame.mylonics.com/',
     pypiUrl: 'https://pypi.org/project/struct-frame/',
   },
   {
@@ -128,6 +130,17 @@ const tools = [
                   <Icon name="github" />
                   GitHub
                 </a>
+                {tool.docsUrl && (
+                  <a
+                    href={tool.docsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-x-1.5 rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:bg-blue-400 dark:bg-blue-600 dark:hover:bg-blue-500"
+                  >
+                    <Icon name="guides" />
+                    Docs
+                  </a>
+                )}
                 {tool.marketplaceUrl && (
                   <a
                     href={tool.marketplaceUrl}
