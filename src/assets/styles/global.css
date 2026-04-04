@@ -11,6 +11,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* K2D font family for brand name */
+  --font-k2d: 'K2D', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
   /* https://tailwindcss.com/docs/colors#customizing-your-colors */
   --color-*: initial;
   --color-transparent: transparent;
@@ -105,6 +108,9 @@
 
 /* Mylonics brand blue — imported after @theme reset so it overrides --color-*: initial */
 @import '../../../mylonics-styles/tailwind/brand-theme.css';
+
+/* Mylonics brand fonts (K2D heading, Roboto body/mono) */
+@import '../../../mylonics-styles/brand/fonts.css';
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
