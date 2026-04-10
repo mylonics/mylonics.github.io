@@ -12,9 +12,9 @@ const metaDescription =
   'Mylonics maintains open source tools for embedded systems development, including IDE for Zephyr, Struct Frame, and BMP Debug.';
 
 const toolImages = {
-  'zephyr-ide': zephyrIdeImage,
-  'struct-frame': structFrameImage,
-  'bmp-debug': bmpDebugImage,
+  'zephyr-ide': { src: zephyrIdeImage, maxWidth: '14rem' },
+  'struct-frame': { src: structFrameImage, maxWidth: '10rem' },
+  'bmp-debug': { src: bmpDebugImage, maxWidth: '10rem' },
 };
 
 const tools = [
@@ -116,9 +116,10 @@ const tools = [
           >
             <div class="flex shrink-0 flex-col items-center justify-center lg:w-56">
               <Image
-                src={toolImages[tool.id as keyof typeof toolImages]}
+                src={toolImages[tool.id as keyof typeof toolImages].src}
                 alt={`${tool.title} logo`}
-                class="w-full max-w-[12rem] rounded-xl object-contain"
+                class="w-full rounded-xl object-contain"
+                style={`max-width: ${toolImages[tool.id as keyof typeof toolImages].maxWidth}`}
               />
               <div class="mt-6 flex flex-wrap justify-center gap-3">
                 <a
