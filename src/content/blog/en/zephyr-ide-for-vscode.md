@@ -1,19 +1,19 @@
 ---
-title: "Zephyr IDE for Visual Studio Code"
-description: "Zephyr IDE is a VS Code extension for embedded development with Zephyr RTOS. Learn how to easily create and share embedded projects with clients."
+title: "IDE for Zephyr"
+description: "IDE for Zephyr is a VS Code extension for embedded development with Zephyr RTOS. Learn how to easily create and share embedded projects with clients."
 author: "Rijesh Augustine"
 authorImage: "@/images/blog/mylonics-author.png"
 authorImageAlt: "Mylonics logo"
 pubDate: 2024-05-05
 cardImage: "@/images/blog/zephyr-ide.png"
-cardImageAlt: "Zephyr IDE for Visual Studio Code"
+cardImageAlt: "IDE for Zephyr for Visual Studio Code"
 readTime: 5
 tags: ["zephyr", "visual studio code", "rtos", "vscode extension", "embedded systems"]
 ---
 
-Zephyr IDE is a VS Code extension that streamlines embedded development with Zephyr RTOS. It allows you to easily create and share embedded projects with clients.
+IDE for Zephyr is a VS Code extension that streamlines embedded development with Zephyr RTOS. It allows you to easily create and share embedded projects with clients.
 
-## Get Zephyr IDE
+## Get IDE for Zephyr
 
 Available on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=mylonics.zephyr-ide) and [Open VSX Registry](https://open-vsx.org/extension/mylonics/zephyr-ide).
 

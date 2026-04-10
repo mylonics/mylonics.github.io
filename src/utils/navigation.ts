@@ -23,7 +23,7 @@ const footerLinks = [
   {
     section: 'Tools',
     links: [
-      { name: 'Zephyr IDE', url: '/tools#zephyr-ide' },
+      { name: 'IDE for Zephyr', url: '/tools#zephyr-ide' },
       { name: 'Struct Frame', url: '/tools#struct-frame' },
       { name: 'BMP Debug', url: '/tools#bmp-debug' },
     ],
