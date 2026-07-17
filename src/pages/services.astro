@@ -6,7 +6,7 @@ import { withBase } from '@utils/path';
 
 const pageTitle: string = `Services | ${SITE.title}`;
 const metaDescription =
-  'Mylonics offers embedded systems design services including industrial automation, field robotics, analog sensing, wireless IoT communication, firmware development, and general electrical systems design.';
+  'Mylonics offers embedded systems design services including industrial automation, field robotics, analog sensing, surveying technologies, wireless IoT and satellite communication, firmware development, UX development, server development, and general electrical systems design.';
 
 const services = [
   {
@@ -31,11 +31,18 @@ const services = [
       'Precision analog front-end and sensor interface design. We cover signal conditioning, low-noise amplification, potentiostat circuits, and measurement of current, resistance, capacitance, inductance, and voltage.',
   },
   {
+    id: 'surveying-technologies',
+    icon: 'mapPin',
+    title: 'Surveying Technologies',
+    description:
+      'Precision positioning and orientation solutions built around RTK GPS and dual-antenna heading systems. We integrate survey-grade GNSS receivers into your platform to deliver centimeter-level accuracy for mapping, navigation, and autonomous applications.',
+  },
+  {
     id: 'wireless-communication',
     icon: 'earth',
     title: 'Wireless Communication (IoT)',
     description:
-      'Full-stack wireless connectivity solutions including Wi-Fi, Bluetooth, LoRa, ISM band telemetry, and cellular. We design the RF hardware, select the right protocol, and develop the firmware needed to connect your device securely to the cloud or to other nodes in the field.',
+      'Full-stack wireless connectivity solutions including Wi-Fi, Bluetooth, LoRa, ISM band telemetry, cellular, and satellite-based communication such as Non-Terrestrial Networks (NTN). We design the RF hardware, select the right protocol, and develop the firmware needed to connect your device securely to the cloud or to other nodes in the field, even in areas beyond terrestrial network coverage.',
   },
   {
     id: 'firmware-development',
@@ -43,6 +50,20 @@ const services = [
     title: 'Firmware Development',
     description:
       'Robust, maintainable embedded firmware built on modern frameworks including Zephyr RTOS. We set up complete development environments, CI/CD pipelines, and device-specific BSPs so your team can develop and deploy with confidence.',
+  },
+  {
+    id: 'ux-development',
+    icon: 'frame',
+    title: 'UX Development',
+    description:
+      'User experience design and application development for device control, status monitoring, and mapping. We build responsive web and desktop applications that give your team clear visibility and control over your hardware in the field.',
+  },
+  {
+    id: 'server-development',
+    icon: 'server',
+    title: 'Server Development',
+    description:
+      'Backend infrastructure that connects your device, frontend, or reporting tools to the cloud or your own network. We build and deploy globally accessible services on AWS as well as local, on-premises servers tailored to your data and connectivity requirements.',
   },
   {
     id: 'electrical-systems-design',
