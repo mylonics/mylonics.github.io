@@ -40,3 +40,27 @@ export const OG = {
   description: SITE.description,
   image: ogImageSrc,
 };
+
+export const ORGANIZATION_LOGO_URL = `${SITE.url}/favicon/android-chrome-384x384.png`;
+
+export const ORGANIZATION_SCHEMA = {
+  '@type': 'ProfessionalService',
+  '@id': `${SITE.url}/#organization`,
+  name: SITE.title,
+  url: SITE.url,
+  description: SITE.description,
+  logo: {
+    '@type': 'ImageObject',
+    url: ORGANIZATION_LOGO_URL,
+  },
+  image: ORGANIZATION_LOGO_URL,
+  email: 'info@mylonics.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Edmonton',
+    addressRegion: 'AB',
+    addressCountry: 'CA',
+  },
+  areaServed: 'Edmonton, Alberta',
+  sameAs: ['https://github.com/mylonics', 'https://x.com/mylonics'],
+};

@@ -10,6 +10,7 @@ import bmpDebugImage from '@images/tools/bmp-debug.png';
 const pageTitle: string = `Open Source Tools | ${SITE.title}`;
 const metaDescription =
   'Mylonics maintains open source tools for embedded systems development, including IDE for Zephyr, Struct Frame, and BMP Debug.';
+const ogTitle = pageTitle;
 
 const toolImages = {
   'zephyr-ide': { src: zephyrIdeImage, maxWidth: '14rem' },
@@ -78,6 +79,7 @@ const tools = [
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
+  customOgTitle={ogTitle}
   structuredData={{
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -114,13 +116,15 @@ const tools = [
             id={tool.id}
             class={`flex flex-col gap-8 rounded-xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800 lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
           >
-            <div class="flex shrink-0 flex-col items-center justify-center lg:w-56">
-              <Image
-                src={toolImages[tool.id as keyof typeof toolImages].src}
-                alt={`${tool.title} logo`}
-                class="w-full rounded-xl object-contain"
-                style={`max-width: ${toolImages[tool.id as keyof typeof toolImages].maxWidth}`}
-              />
+            <div class="flex shrink-0 flex-col items-center justify-start lg:w-56">
+              <div class="flex w-full items-center justify-center rounded-xl bg-neutral-50 p-6 dark:bg-neutral-100">
+                <Image
+                  src={toolImages[tool.id as keyof typeof toolImages].src}
+                  alt={`${tool.title} logo`}
+                  class="w-full object-contain"
+                  style={`max-width: ${toolImages[tool.id as keyof typeof toolImages].maxWidth}`}
+                />
+              </div>
               <div class="mt-6 flex flex-wrap justify-center gap-3">
                 <a
                   href={tool.repoUrl}

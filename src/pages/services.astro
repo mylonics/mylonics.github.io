@@ -7,6 +7,7 @@ import { withBase } from '@utils/path';
 const pageTitle: string = `Services | ${SITE.title}`;
 const metaDescription =
   'Mylonics offers embedded systems design services including industrial automation, field robotics, analog sensing, surveying technologies, wireless IoT and satellite communication, firmware development, UX development, server development, and general electrical systems design.';
+const ogTitle = pageTitle;
 
 const services = [
   {
@@ -78,6 +79,7 @@ const services = [
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
+  customOgTitle={ogTitle}
   structuredData={{
     '@context': 'https://schema.org',
     '@type': 'WebPage',

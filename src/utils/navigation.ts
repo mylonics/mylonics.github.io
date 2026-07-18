@@ -24,6 +24,15 @@ const footerLinks = [
     ],
   },
   {
+    section: 'Products',
+    links: [
+      { name: 'myl-modules', url: '/products/myl-modules' },
+      { name: 'USB to 3x CAN Adapter', url: '/products/usb-can-adapter' },
+      { name: 'RTK Ground Station', url: '/products/rtk-ground-station' },
+      { name: 'myl-debug-probe', url: '/products/myl-debug-probe' },
+    ],
+  },
+  {
     section: 'Tools',
     links: [
       { name: 'IDE for Zephyr', url: '/tools#zephyr-ide' },
@@ -35,7 +44,6 @@ const footerLinks = [
     section: 'Company',
     links: [
       { name: 'About', url: '/about' },
-      { name: 'Products', url: '/products' },
       { name: 'Blog', url: '/blog' },
       { name: 'Contact', url: '/contact' },
     ],
@@ -44,7 +52,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   github: 'https://github.com/mylonics',
-  x: 'https://twitter.com/mylonics',
+  x: 'https://x.com/mylonics',
 };
 
 export default {
